@@ -66,6 +66,7 @@ flowchart TD
 | [**`hyperail-mfe-ios`**](https://github.com/hyperail/hyperail-mfe-ios) | Native iOS Mobile Wallet App | Swift 5.0, Xcode workspace, CocoaPods |
 | [**`hyperail-ts-aos`**](https://github.com/hyperail/hyperail-ts-aos) | Android Native Cryptographic Module (AAR) | C++17, JNI, NTL 9.6.2, Boost 1.68, CMake, NDK 28 |
 | [**`hyperail-ts-ios`**](https://github.com/hyperail/hyperail-ts-ios) | iOS Native Cryptographic Framework (XCFramework) | C++17, Swift, NTL 9.6.2, Boost 1.69, Clang++ |
+| [**`hyperail-devops`**](https://github.com/hyperail/hyperail-devops) | Deployment Orchestration & Reverse Proxy | Docker Compose v2, Caddy, PostgreSQL 17, Redis |
 
 ---
 
