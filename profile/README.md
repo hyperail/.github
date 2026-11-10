@@ -33,17 +33,20 @@ flowchart TD
 
     subgraph Backend_MPC ["Backend & Infrastructure"]
         BE["hyperail-wallet-backend<br/>BFF & Business API Server"]
+        API["hyperail-api<br/>Multi-Chain API & Relayer Server"]
         WAAS["ABC WaaS MPC Engine<br/>Distributed Key Shares"]
     end
 
     WEB -->|BFF Session| BE
     WEB -->|Client Auth| KIT
+    WEB -->|Multi-Chain Routes| API
     EXT -->|WaaS Direct| WAAS
     AOS -->|JNI Binding| TS_AOS
     AOS -->|Wallet API| BE
     IOS -->|Native Framework| TS_IOS
     IOS -->|Wallet API| BE
     AGENT -->|MCP Tools / RPC| WAAS
+    AGENT -->|Execution & Quote| API
     BE -->|Key Share / Sync| WAAS
 ```
 
@@ -56,6 +59,7 @@ flowchart TD
 | [**`hyperail-wallet-frontend`**](https://github.com/hyperail/hyperail-wallet-frontend) | Responsive Web Wallet & Telegram Mini App | Next.js (Pages), React 18, Tailwind, TypeScript |
 | [**`hyperail-chrome-extension`**](https://github.com/hyperail/hyperail-chrome-extension) | Standalone Chrome Extension Wallet | Vite 6, React 18, TypeScript, Manifest V3 |
 | [**`hyperail-wallet-backend`**](https://github.com/hyperail/hyperail-wallet-backend) | Wallet API, Indexing & BFF Server | Express, TypeScript, TypeORM, PostgreSQL, Redis |
+| [**`hyperail-api`**](https://github.com/hyperail/hyperail-api) | Multi-Chain Swap, Relayer, Risk & Protocol API | NestJS 10.4, TypeScript 5, Prisma 7, PostgreSQL, Redis |
 | [**`hyperail-agentic-wallet`**](https://github.com/hyperail/hyperail-agentic-wallet) | Autonomous AI Agent CLI & MCP Server | TypeScript, tsup, viem v2, Commander, MCP SDK |
 | [**`hyperail-kit-v2`**](https://github.com/hyperail/hyperail-kit-v2) | Headless Auth & Zero-Storage Session SDK | TypeScript, React, Vite, Playwright |
 | [**`hyperail-mfe-aos`**](https://github.com/hyperail/hyperail-mfe-aos) | Native Android Mobile Wallet App | Kotlin/Java, Gradle 8.9, AGP 8.6.1, Hilt, Realm |
